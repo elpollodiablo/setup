@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "doing tmux thing"
+tmux-config/setup_tmux.sh
+echo "doing vim thing"
+vim-config/setup_vim.sh
+echo "doing zsh thing"
+zsh-config/setup_zsh.sh
