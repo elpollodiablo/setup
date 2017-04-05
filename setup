@@ -1,8 +1,17 @@
 #!/bin/sh
 
+SCRIPT_DIR=`dirname $0`
+FULL_DIR="`( cd \"$SCRIPT_DIR\" && pwd )`"
+
+pushd $FULL_DIR
+
+git submodule update --init --recursive                  
+
 echo "doing tmux thing"
-tmux-config/setup_tmux.sh
+$FULL_DIR/tmux-config/setup_tmux.sh
 echo "doing vim thing"
-vim-config/setup_vim.sh
+$FULL_DIR/vim-config/setup_vim.sh
 echo "doing zsh thing"
-zsh-config/setup_zsh.sh
+$FULL_DIR/zsh-config/setup_zsh.sh
+
+popd
